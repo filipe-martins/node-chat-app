@@ -20,12 +20,12 @@ io.on('connection', (socket) => {
     createdAt: new Date().getTime()
   });
 
-  //emitir p todos. o servidor é q emite p todos
-  socket.broadcast.emit('newMessage', {
-    from: 'Admin',
-    text: 'New user joined',
-    createdAt: new Date().getTime()
-  });
+  // //emitir p todos menos o pp. o servidor é q emite p todos
+  // socket.broadcast.emit('newMessage', {
+  //   from: 'Admin',
+  //   text: 'New user joined',
+  //   createdAt: new Date().getTime()
+  // });
 
   socket.on('createMessage', (message) => {
     console.log('createMessage', message);

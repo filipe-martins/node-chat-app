@@ -6,17 +6,28 @@ const socketIO = require('socket.io');
 const publicPath = path.join(__dirname, '../public');
 const port = process.env.PORT || 3000;
 var app = express();
-var server = http.createServer(app);  //já e chamado por tras
+var server = http.createServer(app);
 var io = socketIO(server);
 
 app.use(express.static(publicPath));
 
-//websocket is a persistent connection
-io.on('connection', (socket) => { //register event listener. represent user from socket not all ports
-  console.log('Server--> New user connected');
+io.on('connection', (socket) => {
+  console.log('New user connected');
+
+  //ao emitir eventos pode-se enviar dados, from, subject,...
+  socket.emit('newEmail', {
+    from: 'mike@example.com',  
+    text: 'Hey. What is going on.',
+    createAt: 123
+  });
+
+  //escutar os eventos
+  socket.on('createEmail', (newEmail) => {
+    console.log('createEmail', newEmail);
+  });
 
   socket.on('disconnect', () => {
-    console.log('Server--> User was disconnected');
+    console.log('User was disconnected');
   });
 });
 

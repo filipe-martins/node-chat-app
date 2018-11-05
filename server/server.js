@@ -19,9 +19,10 @@ io.on('connection', (socket) => {
 
   socket.broadcast.emit('newMessage', generateMessage('Admin', 'New user joined'));
 
-  socket.on('createMessage', (message) => {
+  socket.on('createMessage', (message, callback) => {  //callback será chamada qd o ack wd a msg chegar
     console.log('createMessage', message);
     io.emit('newMessage', generateMessage(message.from, message.text));
+    callback('This is from the server.'); //ack wd a msg chegar
     // socket.broadcast.emit('newMessage', {
     //   from: message.from,
     //   text: message.text,

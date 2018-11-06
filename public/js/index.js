@@ -1,16 +1,17 @@
 var socket = io();
 
 function scrollToBottom () {
-  // Selectors
+  // Selectors - escolher o ult/nv elem adic p o tomar em conta no valor do auto scroll
   var messages = jQuery('#messages');
   var newMessage = messages.children('li:last-child')
-  // Heights
+  // Heights 
   var clientHeight = messages.prop('clientHeight');
   var scrollTop = messages.prop('scrollTop');
   var scrollHeight = messages.prop('scrollHeight');
   var newMessageHeight = newMessage.innerHeight();
   var lastMessageHeight = newMessage.prev().innerHeight();
 
+  // --> so mexer qd o cliente já está no fim da pag
   if (clientHeight + scrollTop + newMessageHeight + lastMessageHeight >= scrollHeight) {
     messages.scrollTop(scrollHeight);
   }

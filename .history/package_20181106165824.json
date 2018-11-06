@@ -17,10 +17,13 @@
     "express": "^4.14.0",
     "moment": "^2.15.1",
     "socket.io": "^1.4.8"
+<<<<<<< HEAD
   },
   "devDependencies": {
     "expect": "^1.20.2",
     "mocha": "^3.0.2",
     "nodemon": "^1.10.2"
+=======
+>>>>>>> b13f940b3d21fa0489b43282316cd1e7dfeb94e3
   }
 }

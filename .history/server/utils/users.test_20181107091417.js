@@ -58,7 +58,6 @@ describe('Users', () => {
     expect(user.id).toBe(userId);
   });
 
-  //invalid userid
   it('should not find user', () => {
     var userId = '99';
     var user = users.getUser(userId);

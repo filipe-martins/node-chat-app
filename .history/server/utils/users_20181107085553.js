@@ -22,7 +22,6 @@
       var user = this.getUser(id);
   
       if (user) {
-          //retira todos os elems do array q n sejam o id a remover
         this.users = this.users.filter((user) => user.id !== id);
       }
   
@@ -32,7 +31,7 @@
       return this.users.filter((user) => user.id === id)[0]
     }
     getUserList (room) {
-      var users = this.users.filter((user) => user.room === room); //filter aceita uma func como argumento
+      var users = this.users.filter((user) => user.room === room);
       var namesArray = users.map((user) => user.name);
   
       return namesArray;

@@ -22,7 +22,6 @@
       var user = this.getUser(id);
   
       if (user) {
-          //retira todos os elems do array q n sejam o id a remover
         this.users = this.users.filter((user) => user.id !== id);
       }
   

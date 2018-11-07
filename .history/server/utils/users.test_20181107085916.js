@@ -42,7 +42,6 @@ describe('Users', () => {
     expect(users.users.length).toBe(2);
   });
 
-  //false userid
   it('should not remove user', () => {
     var userId = '99';
     var user = users.removeUser(userId);
@@ -58,7 +57,6 @@ describe('Users', () => {
     expect(user.id).toBe(userId);
   });
 
-  //invalid userid
   it('should not find user', () => {
     var userId = '99';
     var user = users.getUser(userId);

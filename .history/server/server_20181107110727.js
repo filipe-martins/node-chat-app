@@ -16,7 +16,7 @@ var users = new Users();
 
 app.use(express.static(publicPath));
 
-io.on('connection', (socket) => { //socket passa a ser o param de entrada do client, q é chamdo de socket neste caso, mas q o IO n é um WebSocket
+io.on('connection', (socket) => {
   console.log('New user connected');
 
   socket.on('join', (params, callback) => {

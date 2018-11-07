@@ -34,13 +34,12 @@ socket.on('disconnect', function () {
 });
 
 socket.on('updateUserList', function (users) {
-  var ol = jQuery('<ol></ol>'); //lista ordenada ao contrario de ul
+  var ol = jQuery('<ol></ol>');
 
   users.forEach(function (user) {
     ol.append(jQuery('<li></li>').text(user));
   });
 
-  //adic ao DOM da pagina html com o id #users
   jQuery('#users').html(ol);
 });
 
